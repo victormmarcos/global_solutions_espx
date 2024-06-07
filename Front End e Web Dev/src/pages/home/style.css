@@ -1,15 +1,22 @@
 body {
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 header {
-    background-color: #006994;
+    background-color: #0992A8;
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    max-height: 50px;
+    margin-left: 20px;
 }
 
 nav ul {
@@ -36,7 +43,7 @@ section {
 }
 
 section h2 {
-    color: #006994;
+    color: #0992A8;
 }
 
 section p {
@@ -50,13 +57,45 @@ section img {
 }
 
 footer {
-    background-color: #004d66;
+    background-color: #07788E;
     color: #fff;
     text-align: center;
     padding: 10px 0;
 }
 
+#loginForm {
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#loginForm label {
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+#loginForm input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#loginForm button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0992A8;
+    color: #fff;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
     nav ul {
         flex-direction: column;
     }
