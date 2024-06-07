@@ -19,20 +19,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Carrossel dinâmico
-    let slideIndex = 0;
-    const slides = document.querySelectorAll('.slide');
-    showSlides();
+    // Função para inicializar um carrossel
+    function initCarousel(carouselClass) {
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(`.${carouselClass} .slide`);
+        showSlides();
 
-    function showSlides() {
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = 'none';
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = 'block';
+            setTimeout(showSlides, 5000); // Muda a cada 5 segundos
         }
-        slideIndex++;
-        if (slideIndex > slides.length) {
-            slideIndex = 1;
-        }
-        slides[slideIndex - 1].style.display = 'block';
-        setTimeout(showSlides, 5000); // Muda a cada 5 segundos
     }
+
+    
+    initCarousel('objetivos-carousel');
+    initCarousel('publico-carousel');
+    initCarousel('tecnologia-carousel');
+    initCarousel('problema-carousel');
+    initCarousel('beneficios-carousel');
+    initCarousel('uso-diario-carousel');
 });
