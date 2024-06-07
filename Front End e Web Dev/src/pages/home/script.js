@@ -36,4 +36,3 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(showSlides, 5000); // Muda a cada 5 segundos
     }
 });
-
